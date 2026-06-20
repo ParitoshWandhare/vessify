@@ -37,12 +37,12 @@ Vessify lets users register, create an organization, paste raw bank statement te
 
 ```
 ┌─────────────────┐         ┌──────────────────┐         ┌──────────────┐
-│   Next.js 15     │  HTTPS  │   Hono API        │  Prisma │  PostgreSQL   │
-│   (Vercel)        │ ──────▶ │   (Railway)        │ ──────▶ │  (Railway)     │
-│                    │ cookies │                    │  ORM    │                │
-│  - Server Comps   │◀────── │  - Better Auth     │◀────── │  - Row-level   │
-│  - Better Auth    │         │  - Org-scoped      │         │    isolation   │
-│    client          │         │    middleware       │         │    via FKs     │
+│   Next.js 15    │  HTTPS  │   Hono API       │  Prisma │  PostgreSQL  │
+│   (Vercel)      │ ──────▶ │   (Render)       │ ──────▶│  (Render)    │
+│                 │ cookies │                  │  ORM    │              │
+│  - Server Comps │◀──────  │  - Better Auth   │◀────── │  - Row-level │
+│  - Better Auth  │         │  - Org-scoped    │         │    isolation │
+│    client       │         │    middleware    │         │    via FKs   │
 └─────────────────┘         └──────────────────┘         └──────────────┘
 ```
 
@@ -344,25 +344,3 @@ Use these two accounts to manually verify isolation: log in as Alice, extract a 
 
 ---
 
-## Screenshots & Demo
-
-> _Add screenshots of the login page, register page, and dashboard here before submission._
-
-- `screenshots/login.png`
-- `screenshots/register.png`
-- `screenshots/dashboard.png`
-- `screenshots/extraction-flow.png`
-
-### Loom Recording Checklist
-
-Record 2–3 short Loom videos (≤5 min each, free tier limit) covering:
-
-1. **Part 1 — Live demo:** register → login → paste all 3 sample texts → see them appear in the table.
-2. **Part 2 — Isolation proof:** log in as a second user/org, show their transaction list is empty, attempt to manually call the API with a forged `organizationId` and show it's ignored.
-3. **Part 3 — Code walkthrough:** explain `requireAuth` middleware, the repository-level org scoping, the extraction regex strategy, and cursor pagination.
-
-Paste your Loom links here:
-
-- Part 1: `<link>`
-- Part 2: `<link>`
-- Part 3: `<link>`
