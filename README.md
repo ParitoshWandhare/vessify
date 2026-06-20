@@ -121,7 +121,7 @@ root/
 ### 1. Clone & Install
 
 ```bash
-git clone <your-repo-url>
+git clone [<your-repo-url>](https://github.com/ParitoshWandhare/vessify.git)
 cd vessify
 
 cd backend && npm install
